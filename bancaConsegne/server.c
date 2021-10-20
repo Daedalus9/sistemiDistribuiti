@@ -9,7 +9,7 @@
 const int PORT = 7777;
 const int BUFFER_SIZE = 124;
 const int OPERATION_SIZE = 5;
-const char *ERROR_MESSAGE = "ERROR\n";
+const char *ERROR_MESSAGE = "ERROR \n";
 
 int conto[10];
 
