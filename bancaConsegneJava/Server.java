@@ -10,11 +10,11 @@ class Server {
     private static final String ERROR_MESSAGE = "ERROR";
     private static final String RESULT_MESSAGE = "OK";
 
-    private int bankAccount = -1;
-    private int[ ] conto = new int[10];
+    private static int bankAccount = -1;
+    private static int[ ] conto = new int[10];
 
 
-    public void sendMessage(DatagramSocket socket, DatagramPacket packet, InetAddress mittAddr, int mittPort, boolean opAccepted) {
+    static void sendMessage(DatagramSocket socket, DatagramPacket packet, InetAddress mittAddr, int mittPort, boolean opAccepted) {
         try {
             byte[] data = null;
             if(opAccepted) {
@@ -37,13 +37,13 @@ class Server {
         return;
     }
 
-    public void setBankAccount(int op) {
+    static void setBankAccount(int op) {
         bankAccount = op;
         System.out.println("Bank account set to " + op);
         return;
     }
 
-    public void deposit(DatagramSocket socket, DatagramPacket packet, String operation, InetAddress mittAddr, int mittPort) {
+    static void deposit(DatagramSocket socket, DatagramPacket packet, String operation, InetAddress mittAddr, int mittPort) {
         if(bankAccount!=-1) {
             
             for(int i=1; i<operation.length(); i++) {
@@ -64,7 +64,7 @@ class Server {
         return;
     }
 
-    public void withdraw(DatagramSocket socket, DatagramPacket packet, String operation, InetAddress mittAddr, int mittPort) {
+    static void withdraw(DatagramSocket socket, DatagramPacket packet, String operation, InetAddress mittAddr, int mittPort) {
         if(bankAccount!=-1) {
             
             for(int i=1; i<operation.length(); i++) {
@@ -92,7 +92,7 @@ class Server {
         return;
     }
 
-    public void getBalance(DatagramSocket socket, DatagramPacket packet, InetAddress mittAddr, int mittPort) {
+    static void getBalance(DatagramSocket socket, DatagramPacket packet, InetAddress mittAddr, int mittPort) {
         if(bankAccount!=-1) {
             String balance = "Current balance on account " + String.valueOf(bankAccount) + ": " + String.valueOf(conto[bankAccount]);
             try {
@@ -112,8 +112,6 @@ class Server {
     }
     
     public static void main(String[] args) {
-        
-        Server s = new Server();
 
         System.out.println("Starting server on port " + PORT);
         DatagramSocket socket = null;
@@ -148,13 +146,13 @@ class Server {
                 //System.out.println(operation.charAt(0));
                 if(operation.charAt(0)=='U' && operation.length() == 2 && operation.charAt(1) >= '0' && operation.charAt(1) <= '9') {
                     int opInt = (int) operation.charAt(1) - '0';
-                    s.setBankAccount(opInt);
-                    s.sendMessage(socket, packet, mittAddr, mittPort, true);
+                    setBankAccount(opInt);
+                    sendMessage(socket, packet, mittAddr, mittPort, true);
                 }
-                else if(operation.charAt(0)=='V' && operation.length() == 5) s.deposit(socket, packet, operation, mittAddr, mittPort);
-                else if(operation.charAt(0)=='P' && operation.length() == 5) s.withdraw(socket, packet, operation, mittAddr, mittPort);
-                else if(operation.charAt(0)=='S' && operation.length()== 1) s.getBalance(socket, packet, mittAddr, mittPort);
-                else s.sendMessage(socket, packet, mittAddr, mittPort, false);
+                else if(operation.charAt(0)=='V' && operation.length() == 5) deposit(socket, packet, operation, mittAddr, mittPort);
+                else if(operation.charAt(0)=='P' && operation.length() == 5) withdraw(socket, packet, operation, mittAddr, mittPort);
+                else if(operation.charAt(0)=='S' && operation.length()== 1) getBalance(socket, packet, mittAddr, mittPort);
+                else sendMessage(socket, packet, mittAddr, mittPort, false);
             }
         }
         catch(Exception e) {
