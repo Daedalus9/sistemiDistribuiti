@@ -1,0 +1,4 @@
+Implementare un web service WsReverse che espone l’interfaccia String reverse(String s), che restituisce la stringa inversa della stringa argomento s. 
+Esempio: invocando reverse("casa") la stringa restituita sarà "asac”. Usare Glassfish come server.
+
+Implementare una servlet che funga da cliente per consumare il web service WsReverse, invocandone l'unico metodo. Usare Tomcat come servlet container.
