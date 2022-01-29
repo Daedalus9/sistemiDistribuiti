@@ -1,0 +1,18 @@
+Implementare un web service di previsioni meteo che mantiene un elenco di otto città e le rispettive temperature attuali.
+
+Il servizio espone due operazioni:
+    Double getTemperature(String city)
+Il parametro passato è una stringa che identifica una città, il valore restituito è la temperatura attuale nella città richiesta.
+
+    String getAllTemperature()
+Il valore restituito è una stringa contenente tutte le temperature mantenute sul server.
+La stringa deve essere nel formato
+“citta1: temp1; <br> citta2: temp2; <br> … citta10: temp10;”
+
+
+Inizializzare le strutture dati per città e temperatura con valori a scelta.
+
+Implementare una o più servlet per interrogare il servizio e mostrare la risposta ricevuta.
+
+
+Tempo a disposizione: 50 minuti.

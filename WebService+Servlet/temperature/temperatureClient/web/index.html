@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Test la città di cui vuoi sapere la temperatura</div>
+        <form method="post" action="./temperatureServlet">
+            <input type="text" name="city" placeholder="Inserisci il nome della città"/>
+            <input type="hidden" name="name" value="nameCity"/>
+            <button type="submit">Invia</button>
+        </form>
+        <p>Oppure clicca nel pulsante sottostante per vedere le temperature di tutte le città nel dataset</p>
+        <form method="post" action="./temperatureServlet">
+            <input type="hidden" name="name" value="allCity"/>
+            <button type="submit">Informazioni per tutte le città</button>
+             
+        </form>
+    </body>
+</html>
