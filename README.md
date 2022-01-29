@@ -1,0 +1,1 @@
+Repository containing some of my excercises made during "Tecnologie per i sistemi distribuiti ed il web" course.
