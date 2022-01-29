@@ -1,0 +1,13 @@
+Implementare un web service che espone l’interfaccia
+	double computeForce(double f, double m, double a)
+per il calcolo di uno dei tre fattori dalla seconda legge di Newton, F=m*a.
+
+Il parametro da calcolare sarà l’unico che ha il valore 0.0. I restanti due sono i valori numerici (diversi da zero) necessari per calcolare il primo.
+
+Esempio: invocando computeForce(20.2, 0.0, 9.81) il metodo deve calcolare il valore di m a partire dal valore di F e a.
+
+(Ignorare le unità di misura).
+
+Infine, implementare una servlet che funga da cliente per consumare il web service.
+
+Tempo a disposizione: 40 minuti.
