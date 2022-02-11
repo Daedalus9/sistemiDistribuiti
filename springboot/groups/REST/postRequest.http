@@ -1,0 +1,21 @@
+POST http://localhost:3000/api/band
+Content-Type: application/json
+
+{
+    "name":"bandName"
+}
+
+###
+
+POST http://localhost:3000/api/song
+Content-Type: application/json
+
+{
+    "band":{
+        "id":"bandId",
+        "name":"bandName"
+    },
+    "name":"songName",
+    "album":"albumName",
+    "year":"songYear"
+}

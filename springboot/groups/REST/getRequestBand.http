@@ -1,0 +1,15 @@
+GET http://localhost:3000/api/band/
+
+###
+
+GET http://localhost:3000/api/band/id
+
+###
+
+GET http://localhost:3000/api/band/bandName/name
+
+###
+
+GET http://localhost:3000/api/getSongsByBandName/localhost:3000/api/band/bandName/name
+
+###

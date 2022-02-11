@@ -1,0 +1,41 @@
+GET http://localhost:3000/api/song/
+
+###
+
+GET http://localhost:3000/api/song/2
+
+###
+
+GET http://localhost:3000/api/song/songName/name
+
+###
+
+GET http://localhost:3000/api/song/songAlbum/name
+
+###
+
+GET http://localhost:3000/api/song/songAlbumContaining/name
+
+###
+
+GET http://localhost:3000/api/song/songYear/year
+
+###
+
+GET http://localhost:3000/api/song/songYearLessThan/year
+
+###
+
+GET http://localhost:3000/api/song/songYearLessThanEqual/year
+
+###
+
+GET http://localhost:3000/api/song/songYearGreaterThan/year
+
+###
+
+GET http://localhost:3000/api/song/songYearGreaterThanEqual/year
+
+###
+
+GET http://localhost:3000/api/song/songYearBetween/startYear/endYear
