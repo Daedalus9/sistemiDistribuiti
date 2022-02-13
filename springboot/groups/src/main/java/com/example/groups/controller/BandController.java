@@ -70,6 +70,12 @@ public class BandController {
         return ResponseEntity.ok(entityList);
     }
 
+    @GetMapping("/band/bandNameEndingWith/{name}")
+    public ResponseEntity<List<Band>> getByBandNameEndingWith(@PathVariable String name) {
+        List<Band> entityList = service.getByBandNameEndingWith(name);
+        return ResponseEntity.ok(entityList);
+    }
+
 
     @PostMapping("/band")
     public ResponseEntity<Band> addBand(@Valid @RequestBody Band e) throws URISyntaxException {

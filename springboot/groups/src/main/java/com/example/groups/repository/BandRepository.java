@@ -13,4 +13,5 @@ public interface BandRepository extends JpaRepository<Band, Long>{
     Optional<Band> findByName(String name);
     List<Band> findByNameContaining(String name);
     List<Band> findByNameStartingWith(String name);
+    List<Band> findByNameEndingWith(String name);
 }
