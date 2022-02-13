@@ -60,9 +60,16 @@ public class BandController {
 
     @GetMapping("/getSongsByBandName/{name}")
     public ResponseEntity<List<Song>> getSongsByBandName(@PathVariable String name) {
-        List<Song> entitylList = songService.getSongByBandName(name);
-        return ResponseEntity.ok(entitylList);
+        List<Song> entityList = songService.getSongByBandName(name);
+        return ResponseEntity.ok(entityList);
     }
+
+    @GetMapping("/band/bandNameStartingWith/{name}")
+    public ResponseEntity<List<Band>> getByBandNameStartingWith(@PathVariable String name) {
+        List<Band> entityList = service.getByBandNameStartingWith(name);
+        return ResponseEntity.ok(entityList);
+    }
+
 
     @PostMapping("/band")
     public ResponseEntity<Band> addBand(@Valid @RequestBody Band e) throws URISyntaxException {

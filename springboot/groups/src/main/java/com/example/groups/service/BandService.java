@@ -32,6 +32,10 @@ public class BandService {
         return repository.findByNameContaining(name);
     }
 
+    public List<Band> getByBandNameStartingWith(String name) {
+        return repository.findByNameStartingWith(name);
+    }
+
     public List<Band> getAllBands() {
         List<Band> output = new ArrayList<Band>();
         repository.findAll().forEach(output::add);
