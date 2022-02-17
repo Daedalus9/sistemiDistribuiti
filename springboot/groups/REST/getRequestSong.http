@@ -2,11 +2,16 @@ GET http://localhost:3000/api/song/
 
 ###
 
-GET http://localhost:3000/api/song/2
+GET http://localhost:3000/api/song/id
 
 ###
 
 GET http://localhost:3000/api/song/songName/name
+
+###
+
+GET http://localhost:3000/api/song/songNameContaining/name
+
 
 ###
 
