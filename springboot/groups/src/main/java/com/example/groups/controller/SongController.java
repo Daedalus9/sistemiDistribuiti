@@ -75,7 +75,13 @@ public class SongController {
 
     @GetMapping("/song/songAlbumStartingWith/{name}")
     public ResponseEntity<List<Song>> getSongsByAlbumStartingWith(@PathVariable String name) {
-        List<Song> entityList = service.getSongByNameStartingWith(name);
+        List<Song> entityList = service.getSongsByAlbumStartingWith(name);
+        return ResponseEntity.ok(entityList);
+    }
+
+    @GetMapping("/song/songAlbumEndingWith/{name}")
+    public ResponseEntity<List<Song>> getSongsByAlbumEndingWith(@PathVariable String name) {
+        List<Song> entityList = service.getSongsByAlbumEndingWith(name);
         return ResponseEntity.ok(entityList);
     }
 

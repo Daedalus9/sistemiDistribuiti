@@ -17,6 +17,7 @@ public interface SongRepository extends JpaRepository<Song, Long>{
     List<Song> findByAlbum(String name);
     List<Song> findByAlbumContaining(String name);
     List<Song> findByAlbumStartingWith(String name);
+    List<Song> findByAlbumEndingWith(String name);
     List<Song> findByYear(int year);
     List<Song> findByYearLessThan(int year);
     List<Song> findByYearLessThanEqual(int year);

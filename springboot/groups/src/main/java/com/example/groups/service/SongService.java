@@ -52,6 +52,10 @@ public class SongService {
         return repository.findByAlbumStartingWith(name);
     }
 
+    public List<Song> getSongsByAlbumEndingWith(String name) {
+        return repository.findByAlbumEndingWith(name);
+    }
+
     public List<Song> getSongByYear(int year) {
         return repository.findByYear(year);
     }
