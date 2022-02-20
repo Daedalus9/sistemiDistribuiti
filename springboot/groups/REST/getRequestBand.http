@@ -19,3 +19,7 @@ GET http://localhost:3000/api/band/bandNameStartingWith/name
 ###
 
 GET http://localhost:3000/api/band/bandNameEndingWith/name
+
+###
+
+GET http://localhost:3000/api/band/bandNameIsNot/name

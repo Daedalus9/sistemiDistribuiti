@@ -76,6 +76,12 @@ public class BandController {
         return ResponseEntity.ok(entityList);
     }
 
+    @GetMapping("/band/bandNameIsNot/{name}")
+    public ResponseEntity<List<Band>> getByBandNameIsNot(@PathVariable String name) {
+        List<Band> entityList = service.getByBandNameIsNot(name);
+        return ResponseEntity.ok(entityList);
+    }
+
 
     @PostMapping("/band")
     public ResponseEntity<Band> addBand(@Valid @RequestBody Band e) throws URISyntaxException {

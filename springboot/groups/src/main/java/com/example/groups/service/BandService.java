@@ -40,6 +40,10 @@ public class BandService {
         return repository.findByNameEndingWith(name);
     }
 
+    public List<Band> getByBandNameIsNot(String name) {
+        return repository.findByNameIsNot(name);
+    }
+
     public List<Band> getAllBands() {
         List<Band> output = new ArrayList<Band>();
         repository.findAll().forEach(output::add);
