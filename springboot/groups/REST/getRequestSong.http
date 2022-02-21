@@ -43,6 +43,10 @@ GET http://localhost:3000/api/song/songAlbumEndingWith/name
 
 ###
 
+GET http://localhost:3000/api/song/songAlbumIsNot/name
+
+###
+
 GET http://localhost:3000/api/song/songYear/year
 
 ###

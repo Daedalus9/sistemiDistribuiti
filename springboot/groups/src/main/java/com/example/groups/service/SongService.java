@@ -60,6 +60,10 @@ public class SongService {
         return repository.findByAlbumEndingWith(name);
     }
 
+    public List<Song> getSongByAlbumIsNot(String name) {
+        return repository.findByAlbumIsNot(name);
+    }
+
     public List<Song> getSongByYear(int year) {
         return repository.findByYear(year);
     }

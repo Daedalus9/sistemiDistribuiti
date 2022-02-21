@@ -91,6 +91,12 @@ public class SongController {
         return ResponseEntity.ok(entityList);
     }
 
+    @GetMapping("/song/songAlbumIsNot/{name}")
+    public ResponseEntity<List<Song>> getSongByAlbumIsNot(@PathVariable String name) {
+        List<Song> entityList = service.getSongByAlbumIsNot(name);
+        return ResponseEntity.ok(entityList);
+    }
+
     @GetMapping("/song/songAlbumContaining/{name}")
     public ResponseEntity<List<Song>> getSongsByAlbumContaining(@PathVariable String name) {
         List<Song> entityList = service.getSongByAlbumContaining(name);
