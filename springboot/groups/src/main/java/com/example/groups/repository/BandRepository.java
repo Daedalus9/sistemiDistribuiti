@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BandRepository extends JpaRepository<Band, Long>{
     Optional<Band> findByName(String name);
+    List<Band> findByNameLike(String likePattern);
     List<Band> findByNameContaining(String name);
     List<Band> findByNameStartingWith(String name);
     List<Band> findByNameEndingWith(String name);

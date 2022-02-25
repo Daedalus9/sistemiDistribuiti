@@ -28,6 +28,10 @@ public class BandService {
         return repository.findByName(name);
     }
 
+    public List<Band> getByBandNameLike(String likePattern) {
+        return repository.findByNameLike(likePattern);
+    }
+
     public List<Band> getByBandNameContaining(String name) {
         return repository.findByNameContaining(name);
     }
