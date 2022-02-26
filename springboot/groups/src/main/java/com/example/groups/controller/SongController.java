@@ -49,6 +49,12 @@ public class SongController {
         return ResponseEntity.ok(entityList);
     }
 
+    @GetMapping("/song/songNameLike/{likePattern}")
+    public ResponseEntity<List<Song>> getSongByNameLike(@PathVariable String likePattern) {
+        List<Song> entityList = service.getSongByNameLike(likePattern);
+        return ResponseEntity.ok(entityList);
+    }
+
     @GetMapping("/song/songNameContaining/{name}")
     public ResponseEntity<List<Song>> getSongByNameContaining(@PathVariable String name) {
         List<Song> entityList = service.getSongByNameContaining(name);
