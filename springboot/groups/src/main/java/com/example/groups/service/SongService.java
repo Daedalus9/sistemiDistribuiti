@@ -52,6 +52,10 @@ public class SongService {
         return repository.findByAlbum(name);
     }
 
+    public List<Song> getSongsByAlbumLike(String likePattern) {
+        return repository.findByAlbumLike(likePattern);
+    }
+
     public List<Song> getSongByAlbumContaining(String name) {
         return repository.findByAlbumContaining(name);
     }

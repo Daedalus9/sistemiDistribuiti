@@ -35,6 +35,10 @@ GET http://localhost:3000/api/song/songAlbum/name
 
 ###
 
+GET http://localhost:3000/api/song/songAlbumLike/likePattern
+
+###
+
 GET http://localhost:3000/api/song/songAlbumContaining/name
 
 ###
